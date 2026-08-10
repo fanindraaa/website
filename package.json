@@ -1,0 +1,49 @@
+{
+  "name": "fanindra.me",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "build:content": "contentlayer2 build",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@swup/head-plugin": "^2.2.0",
+    "@swup/scroll-plugin": "^3.3.2",
+    "@types/node": "22.0.0",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "@vercel/analytics": "^1.6.1",
+    "@vercel/speed-insights": "^1.0.12",
+    "autoprefixer": "10.4.19",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "eslint": "9.8.0",
+    "eslint-config-next": "^15.0.3",
+    "motion": "^13.0.0",
+    "next": "^15.1.0",
+    "postcss": "^8.4.40",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "swup": "^4.7.0",
+    "tailwindcss": "^3.4.15"
+  },
+  "description": "",
+  "main": "next.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.13",
+    "contentlayer2": "^0.5.3",
+    "next-contentlayer2": "^0.5.3",
+    "postcss-nesting": "^13.0.1",
+    "prettier": "^3.9.6",
+    "sass": "^1.77.8",
+    "typescript": "5.5.4"
+  }
+}
