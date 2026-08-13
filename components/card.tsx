@@ -31,12 +31,11 @@ const Card: React.FC<Props> = ({
           width={1500}
           height={1500}
           sizes="(max-width: 720px) 80vw, (max-width: 1080px) 50vw, 40vw"
-          priority
         />
       </Link>
 
       <div className="flex flex-row justify-between mb-2">
-        <h3 className='text-lg mt-0 font-semibold'>{title}</h3>
+        <h3 className='text-[2rem] mt-0 font-semibold'>{title}</h3>
         <time>{year}</time>
       </div>
 

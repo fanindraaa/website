@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Card from '@/components/card';
 
 import { allProjects } from 'contentlayer/generated';
 import { compareDesc, format, parseISO } from 'date-fns';
@@ -34,14 +35,12 @@ export default function Home() {
             </p>
             <p>
               Currently building{' '}
-              <a
-                href="https://hopr.mobi"
-                target="_blank"
-                rel="noreferrer"
+              <Link
+                href="/projects/hopr"
                 className="underline decoration-[#FFFF05] decoration-4 underline-offset-2"
               >
                 Hopr
-              </a>
+              </Link>
               , Rapido&rsquo;s carpooling product, where I&rsquo;m defining new
               interaction models for an emerging mobility behavior.
             </p>
@@ -89,47 +88,25 @@ export default function Home() {
         </aside>
       </section>
 
-      <section className="space-y-16 pb-16 md:space-y-20">
-        {projects.map((project) => (
-          <article key={project.slug}>
-            <Link
-              href={`/projects/${project.slug}`}
-              className="block overflow-hidden rounded-xl border border-sand-4 bg-sand-2 no-underline transition-transform hover:scale-[1.005]"
-            >
-              <Image
-                src={`/images/projects/${project.slug}/${project.image}`}
-                alt={project.title}
-                width={1600}
-                height={1000}
-                sizes="(max-width: 720px) 92vw, 1120px"
-                className="aspect-[16/9] h-full w-full object-cover"
-                priority
-              />
-            </Link>
+      <section className="pb-16">
+        {projects.map((project) => {
+          const link =
+            project.slug === 'hopr-internship' || project.slug === 'hopr'
+              ? '/projects/hopr'
+              : `/projects/${project.slug}`;
 
-            <div className="mt-8 grid gap-3 md:grid-cols-[minmax(0,1fr)_auto] md:items-start">
-              <div>
-                <h2 className="m-0 text-[1.75rem] font-semibold leading-tight">
-                  <Link
-                    href={`/projects/${project.slug}`}
-                    className="no-underline"
-                  >
-                    {project.title}
-                  </Link>
-                </h2>
-                <p className="mt-4 max-w-[880px] text-[1.16rem] leading-[1.5] text-sand-11">
-                  {project.description}
-                </p>
-              </div>
-              <time
-                dateTime={project.year}
-                className="text-[1.1rem] font-semibold text-sand-9 md:pt-1"
-              >
-                {format(parseISO(project.year), 'MMMM, yyyy')}
-              </time>
-            </div>
-          </article>
-        ))}
+          return (
+            <Card
+              key={project.slug}
+              title={project.title}
+              imageSrc={`/images/projects/${project.slug}/${project.image}`}
+              imageAlt={project.title}
+              description={project.description}
+              year={format(parseISO(project.year), 'MMMM, yyyy')}
+              link={link}
+            />
+          );
+        })}
       </section>
     </div>
   );

@@ -52,7 +52,7 @@ export default async function ProjectLayout({
             {format(parseISO(project.year), 'MMMM, yyyy')}
           </time>
         </div>
-        <p className="mt-5 max-w-none text-[1.16rem] leading-[1.5] text-sand-12">
+        <p className="mt-5 max-w-none text-[1rem] leading-[1.5] text-sand-12">
           {project.description}
         </p>
       </header>

@@ -1,5 +1,18 @@
-import NextImage, { ImageProps } from 'next/image';
+import NextImage, { type ImageProps } from 'next/image';
 import clsx from 'clsx';
+
+type MdxImageProps = Omit<
+  ImageProps,
+  'src' | 'alt' | 'width' | 'height' | 'sizes' | 'className'
+> & {
+  src: string;
+  width: number;
+  height: number;
+  alt: string;
+  caption?: string;
+  className?: string;
+  sizes?: string;
+};
 
 export default function Image({
   src,
@@ -8,14 +21,9 @@ export default function Image({
   alt,
   caption,
   className,
+  sizes = '(max-width: 840px) 100vw, 840px',
   ...props
-}: {
-  src: string;
-  width: number;
-  height: number;
-  alt: string;
-  caption?: string;
-} & ImageProps) {
+}: MdxImageProps) {
   return (
     <figure className="case-study-image flex w-full flex-col gap-3">
       <NextImage
@@ -23,8 +31,9 @@ export default function Image({
         width={width}
         height={height}
         alt={alt}
+        sizes={sizes}
         className={clsx(
-          'w-full rounded-xl border border-sand-4 bg-sand-2 object-cover shadow-none',
+          'h-auto w-full rounded-xl border border-sand-4 bg-sand-2 shadow-none',
           className
         )}
         {...props}

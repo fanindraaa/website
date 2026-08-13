@@ -62,15 +62,15 @@ export default function AboutPage() {
       <div className="col-span-full grid grid-cols-subgrid gap-4 lg:gap-8">
         {images.map((image, key) => (
           <figure
-            className="col-span-4 sm:col-span-8 md:col-span-4 aspect-[4_/_5] bg-sand-2 h-full w-full overflow-hidden"
+            className="relative col-span-4 aspect-[4_/_5] h-full w-full overflow-hidden bg-sand-2 sm:col-span-8 md:col-span-4"
             key={key}
           >
             <Image
               src={image.src}
               alt={image.alt}
-              width={1920}
-              height={305}
-              className="w-full h-full object-cover"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+              className="object-cover"
             />
           </figure>
         ))}

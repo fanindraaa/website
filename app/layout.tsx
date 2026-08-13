@@ -1,7 +1,5 @@
 import '../styles/base.css';
 import type { Metadata } from 'next';
-import { Analytics } from '@vercel/analytics/next';
-import { SpeedInsights } from '@vercel/speed-insights/next';
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 import ClickSpark from '../components/clickspark';
@@ -35,15 +33,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  twitter: {
-    title: 'Fanindra Maharana',
-    card: 'summary_large_image',
-    description: 'Product Designer',
-    creator: '@fanindraaa',
-  },
-  verification: {
-    google: 'stqJtLv8IK8j4XXD3FJI8PnEPdMd2Kb-BLJJusaZuuA',
-  },
 };
 
 export default function RootLayout({
@@ -55,6 +44,7 @@ export default function RootLayout({
     <html lang="en">
       <head></head>
       <body className="antialiased text-sand-12 bg-sand-1 text-[1rem] font-medium selection:bg-[#FFFF05] selection:text-[#000000] min-h-full flex flex-col">
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="f276e1ed-f3c3-4560-aa5c-53e7cf03f6fb"></script>
         <ClickSpark
           sparkColor="#000000"
           sparkSize={10}
@@ -70,8 +60,6 @@ export default function RootLayout({
 
           <Footer />
         </ClickSpark>
-        <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   );
