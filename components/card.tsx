@@ -1,56 +1,61 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-interface Props {
+interface CardProps {
   title: string;
   imageSrc: string;
   imageAlt: string;
   description: string;
   year: string;
   link: string;
+  priority?: boolean;
 }
 
-const Card: React.FC<Props> = ({
+const Card: React.FC<CardProps> = ({
   title,
   imageSrc,
   imageAlt,
   description,
   year,
   link,
+  priority = false,
 }) => {
   return (
-    <div className="mb-12 border-b border-sand-6 last:border-transparent last:mb-0">
+    <article className="group mb-16 md:mb-20 last:mb-0">
       <Link
         href={link}
-        className="block bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08)] mb-4 ring-[#008CFF] ring-offset-2 focus-visible:ring-2"
+        className="block overflow-hidden rounded-xl border border-sand-4 bg-sand-2 no-underline transition-transform duration-200 hover:scale-[1.005] focus-visible:ring-2 focus-visible:ring-[#008CFF]"
       >
         <Image
           src={imageSrc}
           alt={imageAlt}
-          className="select-none"
-          width={1500}
-          height={1500}
-          sizes="(max-width: 720px) 80vw, (max-width: 1080px) 50vw, 40vw"
+          width={1600}
+          height={1000}
+          priority={priority}
+          sizes="(max-width: 720px) 92vw, 1120px"
+          className="aspect-[16/9] h-full w-full object-cover select-none"
         />
       </Link>
 
-      <div className="flex flex-row justify-between mb-2">
-        <h3 className='text-[2rem] mt-0 font-semibold'>{title}</h3>
-        <time>{year}</time>
+      <div className="mt-8 grid gap-3 md:grid-cols-[minmax(0,1fr)_auto] md:items-start">
+        <div>
+          <h2 className="m-0 text-[1.75rem] font-semibold leading-tight">
+            <Link
+              href={link}
+              className="no-underline hover:text-sand-11 transition-colors"
+            >
+              {title}
+            </Link>
+          </h2>
+          <p className="mt-4 max-w-[880px] text-[1.16rem] leading-[1.5] text-sand-11">
+            {description}
+          </p>
+        </div>
+        <time className="text-[1.1rem] font-semibold text-sand-9 md:pt-1">
+          {year}
+        </time>
       </div>
-
-      <div className="flex flex-row justify-between mb-12">
-      <p className="text-gray-500">{description}</p>
-      
-      <Link
-          href={link}
-          title={`Read case study -> ${title}`}
-        >
-          Read case study
-        </Link>
-      </div>
-
-    </div>
+    </article>
   );
 };
 

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import Card from '@/components/card';
+import Card from '@/components/Card';
 
 import { allProjects } from 'contentlayer/generated';
 import { compareDesc, format, parseISO } from 'date-fns';

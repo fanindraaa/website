@@ -37,14 +37,15 @@ export default function HoprPage() {
           </time>
         </div>
         <div className="mt-5 space-y-4 text-[1rem] leading-[1.5] text-sand-12">
-          <blockquote className="border-l-2 border-l-sand-6 pl-4 mb-4">
+          <p className="mb-4">
             <p>
               I joined Hopr as an intern and now work as an Associate Professional, exploring how trust, behavior, and interaction design can shape adoption in an emerging shared-mobility category.
             </p>
-          </blockquote>
-          <blockquote className="border-l-2 border-l-sand-6 pl-4">
+          </p>
+          <blockquote className="border-l-2 border-l-sand-6 p-2 bg-yellow-100 pl-4">
             <p>
-              Hopr is Rapido’s carpooling product, built and operated like a startup within Rapido. Here, design is rarely linear—problems evolve, assumptions change, and ideas move quickly from exploration to production. Rather than forcing that work into a traditional case study, I’ve documented it as a timeline. Sort, explore, and dive into the work that interests you.
+              Hopr is Rapido’s carpooling product, built and operated like a startup within Rapido. Here, design is rarely linear. Problems evolve, assumptions change, and ideas move quickly from exploration to production. Rather than forcing that work into a traditional case study, I’ve documented it as a timeline
+              Sort, explore, and dive into the work that interests you.
             </p>
           </blockquote>
         </div>

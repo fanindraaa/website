@@ -1,14 +1,38 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Card from '@/components/card';
+import Card from '@/components/Card';
 
 import { allProjects } from 'contentlayer/generated';
 import { compareDesc, format, parseISO } from 'date-fns';
 
-const filteredProjects = allProjects.filter((project) => !project.playground);
-const projects = filteredProjects.sort((a, b) =>
-  compareDesc(new Date(a.year), new Date(b.year))
-);
+const hoprProjectCard = {
+  slug: 'hopr',
+  title: 'Hopr Carpool',
+  description:
+    'Explored how trust and behavioral design can shape adoption in an emerging shared mobility category',
+  imageSrc: '/images/projects/hopr-internship/boost-mockup-cover.jpg',
+  year: 'December 2025 — Present',
+  link: '/projects/hopr',
+};
+
+const otherProjects = allProjects
+  .filter(
+    (project) =>
+      !project.playground &&
+      project.slug !== 'hopr-internship' &&
+      project.slug !== 'hopr'
+  )
+  .sort((a, b) => compareDesc(new Date(a.year), new Date(b.year)))
+  .map((project) => ({
+    slug: project.slug,
+    title: project.title,
+    description: project.description,
+    imageSrc: `/images/projects/${project.slug}/${project.image}`,
+    year: format(parseISO(project.year), 'MMMM, yyyy'),
+    link: `/projects/${project.slug}`,
+  }));
+
+const featuredProjects = [hoprProjectCard, ...otherProjects];
 
 export default function Home() {
   return (
@@ -89,24 +113,18 @@ export default function Home() {
       </section>
 
       <section className="pb-16">
-        {projects.map((project) => {
-          const link =
-            project.slug === 'hopr-internship' || project.slug === 'hopr'
-              ? '/projects/hopr'
-              : `/projects/${project.slug}`;
-
-          return (
-            <Card
-              key={project.slug}
-              title={project.title}
-              imageSrc={`/images/projects/${project.slug}/${project.image}`}
-              imageAlt={project.title}
-              description={project.description}
-              year={format(parseISO(project.year), 'MMMM, yyyy')}
-              link={link}
-            />
-          );
-        })}
+        {featuredProjects.map((project, index) => (
+          <Card
+            key={project.slug}
+            title={project.title}
+            imageSrc={project.imageSrc}
+            imageAlt={project.title}
+            description={project.description}
+            year={project.year}
+            link={project.link}
+            priority={index === 0}
+          />
+        ))}
       </section>
     </div>
   );
