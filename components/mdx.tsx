@@ -4,11 +4,13 @@ import Image from '@/components/image';
 import { useMDXComponent } from 'next-contentlayer2/hooks';
 import type { TOCItem } from '@/lib/toc';
 import { HeadingIdProvider, h2, h3 } from '@/components/mdx-headings';
+import { Sidenote, SidenoteProvider } from '@/components/sidenote';
 
 const components = {
   Image,
   h2,
   h3,
+  Sidenote,
 };
 
 interface MdxProps {
@@ -21,7 +23,10 @@ export function Mdx({ code, headings = [] }: MdxProps) {
 
   return (
     <HeadingIdProvider headings={headings}>
-      <Component components={{ ...components }} />
+      <SidenoteProvider>
+        <Component components={{ ...components }} />
+      </SidenoteProvider>
     </HeadingIdProvider>
   );
 }
+

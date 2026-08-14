@@ -149,7 +149,11 @@
   }
 
   .case-study p {
-    @apply max-w-none text-[1.02rem] leading-[1.58] text-sand-12;
+    @apply relative max-w-none text-[1.02rem] leading-[1.58] text-sand-12;
+  }
+
+  .case-study > section > * {
+    @apply relative;
   }
 
   .case-study p + p {
