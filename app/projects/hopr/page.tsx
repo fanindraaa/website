@@ -23,7 +23,7 @@ export default function HoprPage() {
 
   return (
     <article className="case-study col-span-full mx-auto w-full max-w-[840px] pb-20 pt-24 md:pt-32">
-      <Link href="/" className="case-back-chip fixed left-8 top-8 py-3 px-4 z-50">
+      <Link href="/" className="case-back-chip fixed left-6 top-6 z-50 py-3 px-4 md:left-8 md:top-8">
         &lt; Go Back
       </Link>
 
@@ -33,7 +33,7 @@ export default function HoprPage() {
             Hopr Carpool
           </h1>
           <time className="pt-1 text-[1.05rem] font-semibold text-sand-9">
-            December 2025 — Present
+            December 2025 - Present
           </time>
         </div>
         <div className="mt-5 space-y-4 text-[1rem] leading-[1.5] text-sand-12">

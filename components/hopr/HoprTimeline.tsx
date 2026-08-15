@@ -37,7 +37,7 @@ export function HoprTimeline({ initialEntries }: HoprTimelineProps) {
       <section className="mt-8 space-y-16">
         <AnimatePresence mode="popLayout" initial={false}>
           {entries.map((entry) => {
-            const headingId = generateSlug(entry.formattedDate);
+            const headingId = entry.outerHeadingId || generateSlug(entry.formattedDate);
             return (
               <motion.article
                 key={entry.slug}
@@ -59,13 +59,11 @@ export function HoprTimeline({ initialEntries }: HoprTimelineProps) {
                 }}
                 className="space-y-6"
               >
-                <h2
-                  id={headingId}
-                  className="text-[1.6rem] font-semibold leading-tight mb-5 mt-16 pt-8 border-t border-sand-5 first:border-t-0 first:pt-0"
+                <p className="text-[1.5rem] text-grey-500 font-semibold leading-tight pt-12 border-t border-sand-5"
                 >
                   {entry.formattedDate}
-                </h2>
-                <Mdx code={entry.code} />
+                </p>
+                <Mdx code={entry.code} headings={entry.headings} />
               </motion.article>
             );
           })}

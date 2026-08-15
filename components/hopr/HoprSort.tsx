@@ -11,19 +11,19 @@ interface HoprSortProps {
 
 export function HoprSort({ sortOrder, onChange }: HoprSortProps) {
   return (
-    <div className="flex items-center justify-end gap-2 pb-6">
-      <span className="text-[0.9rem] font-semibold text-sand-9">Sort:</span>
+    <div className="fixed right-6 top-6 z-50 md:right-8 md:top-8">
+      <span className="text-[0.875rem] font-semibold text-sand-9 mr-4">Sort:</span>
       <div
         role="group"
         aria-label="Sort timeline entries"
-        className="inline-flex rounded-full border border-sand-4 bg-sand-2 p-1 text-[0.875rem] font-semibold shadow-xs"
+        className="inline-flex rounded-full p-1 text-[0.85rem] font-semibold"
       >
         <button
           type="button"
           onClick={() => onChange('newest')}
           aria-pressed={sortOrder === 'newest'}
           className={clsx(
-            'rounded-full px-3 py-1.5 transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-sand-12',
+            'rounded-full px-3 py-1.5 transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-sand-12 cursor-pointer',
             sortOrder === 'newest'
               ? 'bg-white text-sand-12 shadow-xs'
               : 'text-sand-9 hover:text-sand-12'
@@ -36,7 +36,7 @@ export function HoprSort({ sortOrder, onChange }: HoprSortProps) {
           onClick={() => onChange('oldest')}
           aria-pressed={sortOrder === 'oldest'}
           className={clsx(
-            'rounded-full px-3 py-1.5 transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-sand-12',
+            'rounded-full px-3 py-1.5 transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-sand-12 cursor-pointer',
             sortOrder === 'oldest'
               ? 'bg-white text-sand-12 shadow-xs'
               : 'text-sand-9 hover:text-sand-12'
