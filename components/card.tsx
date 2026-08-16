@@ -37,9 +37,9 @@ const Card: React.FC<CardProps> = ({
         />
       </Link>
 
-      <div className="mt-8 grid gap-3 md:grid-cols-[minmax(0,1fr)_auto] md:items-start">
+      <div className="mt-4 grid gap-3 md:grid-cols-[minmax(0,1fr)_auto] md:items-start">
         <div>
-          <h2 className="m-0 text-[1.75rem] font-semibold leading-tight">
+          <h2 className="m-0 text-[1.35rem] font-semibold leading-tight">
             <Link
               href={link}
               className="no-underline hover:text-sand-11 transition-colors"
@@ -47,11 +47,11 @@ const Card: React.FC<CardProps> = ({
               {title}
             </Link>
           </h2>
-          <p className="mt-4 max-w-[880px] text-[1.16rem] leading-[1.5] text-sand-11">
+          <p className="mt-2 max-w-[880px] text-[1rem] leading-[1.5] text-sand-11">
             {description}
           </p>
         </div>
-        <time className="text-[1.1rem] font-semibold text-sand-9 md:pt-1">
+        <time className="text-[1rem] text-sand-9 md:pt-1">
           {year}
         </time>
       </div>

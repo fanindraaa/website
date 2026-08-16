@@ -123,7 +123,7 @@ export function Sidenote({
         }`}
       >
         {showIndicator && noteLabel ? (
-          <span className="font-medium mr-1 text-sand-11">{noteLabel}.</span>
+          <span className="font-semibold mr-1 text-sand-11">{noteLabel}.</span>
         ) : null}
         {children}
       </span>

@@ -43,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head></head>
-      <body className="antialiased text-sand-12 bg-sand-1 text-[1rem] font-medium selection:bg-[#FFFF05] selection:text-[#000000] min-h-full flex flex-col">
+      <body className="antialiased text-sand-12 bg-sand-1 text-[1rem] selection:bg-[#FFFF05] selection:text-[#000000] min-h-full flex flex-col">
         <script defer src="https://cloud.umami.is/script.js" data-website-id="f276e1ed-f3c3-4560-aa5c-53e7cf03f6fb"></script>
         <ClickSpark
           sparkColor="#000000"

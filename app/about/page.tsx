@@ -77,8 +77,8 @@ export default function AboutPage() {
       </div>
 
       <header className="col-span-full md:col-span-12 lg:col-span-8 lg:sticky lg:top-8 lg:self-start mb-20 lg:mb-0">
-        <h1>About Anton</h1>
-        <p>B. 2002</p>
+        <h1>About Fanindra Maharana</h1>
+        <p>B. 2003</p>
       </header>
 
       <section className="col-span-full md:col-span-12 lg:col-span-7 mb-8">
@@ -88,70 +88,6 @@ export default function AboutPage() {
         <p>
         I recently completed my M. Des in IxD at JKLU, Jaipur. Prior to design, I studied computer science, but design caught my interest along the way and I wanted to pursue it full time. I still love to code, but design is where my heart is. Oh! they invented a term for this:  <span className='font-semibold'>&ldquo;vibe-coding&rdquo;</span>
         </p>
-      </section>
-
-      <section className="col-span-4 sm:col-span-8 lg:col-span-4 border-t border-t-sand-6 pt-8 lg:col-start-9">
-        <h2>Things I like</h2>
-        <ul>
-          <li>
-            <a
-              href="https://www.cosmos.so/stallboerger/goods"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Quality goods
-            </a>
-          </li>
-          <li>Wearing black</li>
-          <li>
-            <a
-              href="https://music.apple.com/de/playlist/con-amore/pl.u-r2yBDE4tdN97Zo?l=en-GB"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Piano music
-            </a>
-          </li>
-          <li>Good food</li>
-          <li>Mountains</li>
-          <li>
-            <a
-              href="https://www.cosmos.so/stallboerger/architecture"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Architecture
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.cosmos.so/stallboerger/interior"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Interior Design
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.cosmos.so/stallboerger/concrete"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Concrete
-            </a>
-          </li>
-        </ul>
-      </section>
-      <section className="col-span-4 sm:col-span-8 lg:col-span-4 border-t border-t-sand-6 pt-8">
-        <h2>Things I don’t like</h2>
-        <ul>
-          <li>Smalltalk</li>
-          <li>Sparkling water</li>
-          <li>Alcohol</li>
-          <li>Crowds</li>
-          <li>Marble</li>
-        </ul>
       </section>
 
       <section className="col-span-full lg:col-span-12 lg:col-start-5 border-t border-t-sand-6 pt-8 mt-8 grid grid-cols-16 lg:grid-cols-12 gap-4 md:gap-8 md:gap-y-8">

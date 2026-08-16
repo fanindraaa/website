@@ -10,7 +10,7 @@ const hoprProjectCard = {
   description:
     'Explored how trust and behavioral design can shape adoption in an emerging shared mobility category',
   imageSrc: '/images/projects/hopr-internship/boost-mockup-cover.jpg',
-  year: 'December 2025 — Present',
+  year: 'December 2025 - Present',
   link: '/projects/hopr',
 };
 
@@ -38,10 +38,10 @@ export default function Home() {
     <div className="col-span-full mx-auto w-full max-w-[1120px]">
       <section className="grid min-h-[520px] grid-cols-1 items-center gap-12 pb-16 pt-12 md:grid-cols-[minmax(0,1fr)_360px] md:pt-20 lg:gap-20">
         <div className="max-w-[560px]">
-          <h1 className="text-[2rem] font-semibold leading-none tracking-normal md:text-[2.25rem]">
+          <h1 className="text-[2rem] font-semibold leading-none tracking-tight md:text-[2.25rem]">
             Fanindra Maharana
           </h1>
-          <p className="mt-3 text-[1.75rem] leading-none text-sand-9 md:text-[2rem]">
+          <p className="m-0 text-[1.125rem] tracking-tight font-semibold text-sand-9 md:text-[2rem]">
             Product Designer
           </p>
 

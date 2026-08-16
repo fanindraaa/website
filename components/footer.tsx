@@ -21,7 +21,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="mx-auto mt-10 flex w-full max-w-[1120px] flex-col gap-8 px-4 pb-10 text-[0.95rem] font-semibold md:flex-row md:items-center md:justify-between lg:px-8">
+    <footer className="mx-auto mt-10 flex w-full max-w-[1120px] flex-col gap-8 pb-10 text-[0.95rem] font-semibold md:flex-row md:items-center md:justify-between">
       <p>&copy;{new Date().getFullYear()} - Fanindra Maharana</p>
       <nav aria-label="Social links" className="flex flex-wrap gap-7">
         {links.map((link) => (
