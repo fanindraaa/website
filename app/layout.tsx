@@ -12,7 +12,16 @@ export const metadata: Metadata = {
   },
   description: 'Product Designer',
   icons: {
-    icon: '/favicon.svg',
+    icon: [
+      {
+        url: '/light.svg',
+        media: '(prefers-color-scheme: light)',
+      },
+      {
+        url: '/dark.svg',
+        media: '(prefers-color-scheme: dark)',
+      },
+    ],
   },
   openGraph: {
     title: 'Fanindra Maharana',
@@ -44,7 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head></head>
-      <body className="antialiased text-sand-12 bg-sand-1 text-[14px] selection:bg-[#FFFF05] selection:text-[#000000] min-h-screen flex flex-col justify-between px-4 sm:px-6 lg:px-8 py-4">
+      <body className="antialiased text-sand-12 bg-sand-1 text-[14px] selection:bg-[#00FF5E] selection:text-black min-h-screen flex flex-col justify-between px-4 sm:px-6 lg:px-8 py-4">
         <script
           defer
           src="https://cloud.umami.is/script.js"
@@ -62,18 +71,9 @@ export default function RootLayout({
             <Link
               href="/"
               aria-label="Home"
-              className="flex items-center text-sand-12 no-underline hover:opacity-70 transition-opacity"
+              className="flex items-center text-sand-12 font-semibold no-underline hover:opacity-70 transition-opacity"
             >
-              <svg
-                className="w-6 h-6 text-sand-12"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              >
-                <ellipse cx="12" cy="12" rx="9" ry="5" />
-                <circle cx="12" cy="12" r="2" fill="currentColor" />
-              </svg>
+              FM
             </Link>
             <HeaderTime />
           </header>

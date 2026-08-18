@@ -1,140 +1,115 @@
-import Link from 'next/link';
 import GalleryCard from '@/components/gallery-card';
 
 const galleryItems = [
   {
-    name: 'Metalab Internship',
-    year: '2025',
-    description: 'Bringing a 0+1 B2B disruptor to life with one of Metalab\'s largest product teams.',
-    image: '/images/projects/hopr-internship/boost-mockup-cover.jpg',
-    href: '/projects/hopr',
-    aspectRatio: 'aspect-[16/10]',
+    name: 'Hopr Carpool',
+    year: '2025 - Present',
+    description: "Bringing a 0+1 B2B disruptor to life with one of Metalab's largest product teams.",
+    linkText: 'Case study coming soon',
+    images: [
+      '/Hopr Layout.png',
+      '/images/Hopr1.png',
+      '/images/Hopr 2.png',
+      '/Homepage.png',
+    ],
     priority: true,
   },
   {
     name: 'Figma Live Comments',
     year: '2025',
     description: 'Capturing creativity on-the-go with Figma mobile.',
-    image: '/images/projects/hopr-internship/boost-holding-mockup.jpg',
-    href: '/projects/hopr',
-    aspectRatio: 'aspect-[3/4]',
+    linkText: 'Check flipbook',
+    linkUrl: 'https://flipbook.com',
+    images: [
+      '/Case Study Layout.png',
+      '/Homepage.png',
+      '/og.jpg',
+      '/images/Hopr1.png',
+    ],
     priority: true,
   },
   {
     name: 'Wonder',
     year: '2025',
-    description: 'Creating what\'s next for human-AI interaction in designer workflows.',
-    image: '/images/projects/cardtree/header.png',
-    href: '/projects/cardtree',
-    aspectRatio: 'aspect-[16/10]',
+    description: "Creating what's next for human-AI interaction in designer workflows.",
+    linkText: 'Coming soon',
+    images: [
+      '/og.jpg',
+      '/Hopr Layout.png',
+      '/images/Hopr 2.png',
+      '/Case Study Layout.png',
+    ],
   },
   {
     name: 'Procter & Gamble Internship',
     year: '2025',
-    description: 'Designing digital products for the world\'s leading beauty and home care brands.',
-    image: '/images/projects/cardtree/1_4.png',
-    href: '/projects/cardtree',
-    aspectRatio: 'aspect-[16/10]',
+    description: "Designing digital products for the world's leading beauty and home care brands.",
+    linkText: 'Coming soon',
+    images: [
+      '/images/Hopr 2.png',
+      '/Case Study Layout.png',
+      '/Homepage.png',
+      '/og.jpg',
+    ],
   },
   {
     name: 'Bubble.fi',
     year: '2023',
     description: 'Harnessing creative play to turn procrastination into moments of delight.',
-    image: '/images/projects/hopr-internship/boost-device.jpg',
-    href: '/playground',
-    aspectRatio: 'aspect-[3/4]',
+    linkText: 'Coming soon',
+    images: [
+      '/images/Hopr1.png',
+      '/Homepage.png',
+      '/Hopr Layout.png',
+      '/images/Hopr 2.png',
+    ],
   },
 ];
-
-const leftColumnItems = [galleryItems[0], galleryItems[2], galleryItems[4]];
-const rightColumnItems = [galleryItems[1], galleryItems[3]];
 
 export default function Home() {
   return (
     <div className="w-full grid grid-cols-1 lg:grid-cols-[280px_1fr] xl:grid-cols-[320px_1fr] gap-12 lg:gap-14 xl:gap-20 items-start text-[14px]">
       {/* Left Side Panel */}
-      <aside className="w-full flex flex-col space-y-10">
+      <aside className="w-full flex flex-col space-y-10 lg:sticky lg:top-8">
         {/* Bio text */}
         <div className="space-y-4 text-[13.5px] leading-relaxed text-sand-11">
           <p>
-            Fanindra Maharana is a designer with a love for storytelling and an obsessive commitment to craft. He is interested in creating meaningful and innately human digital experiences that make our interactions with the world more thoughtful and beautiful.
+            Hey, I&rsquo;m Fanindra. I&rsquo;m a Product Designer obsessed with building consumer products in fast-paced environments. I care about interaction, systems, and craft.
           </p>
           <p>
-            Currently, he&rsquo;s designing and learning{' '}
+            Currently, I&rsquo;m designing{' '}
+            <a
+              href="https://hopr.mobi/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-sand-12 no-underline hover:underline"
+            >
+              Hopr
+            </a>{' '}
+            by{' '}
             <a
               href="https://www.rapido.bike/"
               target="_blank"
               rel="noreferrer"
               className="text-sand-12 no-underline hover:underline"
             >
-              @Rapido
+              Rapido.
             </a>{' '}
-            (Hopr). Previously,{' '}
-            <Link
-              href="/projects/cardtree"
-              className="text-sand-12 no-underline hover:underline"
-            >
-              @Cardtree
-            </Link>
-            , and{' '}
+            Previously, at{' '}
             <a
               href="https://thedouble.ai/"
               target="_blank"
               rel="noreferrer"
               className="text-sand-12 no-underline hover:underline"
             >
-              @Double.ai
+              Cardtree (now thedouble.ai)
             </a>
-            .
           </p>
         </div>
 
-        {/* Table of Contents */}
         <div>
           <h2 className="text-[12.5px] font-normal text-sand-9 mb-2.5">
-            Table of Contents
-          </h2>
-          <ul className="space-y-1.5 text-[13.5px] list-none p-0 m-0">
-            <li>
-              <Link
-                href="/about"
-                className="flex items-center justify-between text-sand-12 no-underline hover:opacity-70 group py-0.5"
-              >
-                <span>01. About Me</span>
-                <span className="text-sand-9 group-hover:translate-x-0.5 transition-transform">
-                  →
-                </span>
-              </Link>
-            </li>
-            <li>
-              <a
-                href="#work"
-                className="flex items-center justify-between text-sand-12 no-underline hover:opacity-70 group py-0.5"
-              >
-                <span>02. Work</span>
-                <span className="text-sand-9 group-hover:translate-x-0.5 transition-transform">
-                  →
-                </span>
-              </a>
-            </li>
-            <li>
-              <Link
-                href="/playground"
-                className="flex items-center justify-between text-sand-12 no-underline hover:opacity-70 group py-0.5"
-              >
-                <span>03. Playground</span>
-                <span className="text-sand-9 group-hover:translate-x-0.5 transition-transform">
-                  →
-                </span>
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* Nodes */}
-        <div>
-          <h2 className="text-[12.5px] font-normal text-sand-9 mb-2.5">
-            Nodes
+            Get in touch
           </h2>
           <ul className="space-y-1.5 text-[13.5px] list-none p-0 m-0">
             <li>
@@ -142,7 +117,7 @@ export default function Home() {
                 href="mailto:imfanindra@gmail.com"
                 className="flex items-center justify-between text-sand-12 no-underline hover:opacity-70 group py-0.5"
               >
-                <span>04. Email</span>
+                <span>Email</span>
                 <span className="text-sand-9 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
                   ↗
                 </span>
@@ -155,7 +130,7 @@ export default function Home() {
                 rel="noreferrer"
                 className="flex items-center justify-between text-sand-12 no-underline hover:opacity-70 group py-0.5"
               >
-                <span>05. LinkedIn</span>
+                <span>LinkedIn</span>
                 <span className="text-sand-9 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
                   ↗
                 </span>
@@ -168,7 +143,7 @@ export default function Home() {
                 rel="noreferrer"
                 className="flex items-center justify-between text-sand-12 no-underline hover:opacity-70 group py-0.5"
               >
-                <span>06. Twitter</span>
+                <span>Twitter</span>
                 <span className="text-sand-9 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
                   ↗
                 </span>
@@ -181,7 +156,7 @@ export default function Home() {
                 rel="noreferrer"
                 className="flex items-center justify-between text-sand-12 no-underline hover:opacity-70 group py-0.5"
               >
-                <span>07. Résumé</span>
+                <span>Resume</span>
                 <span className="text-sand-9 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
                   ↗
                 </span>
@@ -191,24 +166,9 @@ export default function Home() {
         </div>
       </aside>
 
-      {/* Right Gallery Cards Section */}
-      <div id="work" className="w-full">
-        {/* Desktop 2-column grid */}
-        <div className="hidden md:grid md:grid-cols-2 gap-x-8 gap-y-12 items-start w-full">
-          <div className="flex flex-col gap-12 w-full">
-            {leftColumnItems.map((item) => (
-              <GalleryCard key={item.name} {...item} />
-            ))}
-          </div>
-          <div className="flex flex-col gap-12 w-full">
-            {rightColumnItems.map((item) => (
-              <GalleryCard key={item.name} {...item} />
-            ))}
-          </div>
-        </div>
-
-        {/* Phone / Mobile 1-column grid */}
-        <div className="flex flex-col md:hidden gap-10 w-full">
+      {/* Right Project List View Section */}
+      <div id="work" className="w-full min-w-0">
+        <div className="flex flex-col gap-12 sm:gap-14 md:gap-16 w-full">
           {galleryItems.map((item) => (
             <GalleryCard key={item.name} {...item} />
           ))}
@@ -217,3 +177,4 @@ export default function Home() {
     </div>
   );
 }
+

@@ -129,15 +129,24 @@
   }
 
   .case-study {
-    @apply text-[1rem] leading-[1.55];
+    @apply text-[1rem] leading-[1.55] w-full mx-auto;
   }
 
   .case-study > section {
-    @apply space-y-10;
+    @apply space-y-10 w-full mx-auto;
+  }
+
+  .case-study h1,
+  .case-study h2,
+  .case-study h3,
+  .case-study h4,
+  .case-study h5,
+  .case-study h6 {
+    @apply max-w-[520px] mx-auto font-semibold leading-tight;
   }
 
   .case-study h2 {
-    @apply mb-5 mt-16 text-[1.6rem] font-semibold leading-tight;
+    @apply mb-5 mt-16 text-[1.6rem];
   }
 
   .case-study h2:not(:first-child) {
@@ -145,11 +154,11 @@
   }
 
   .case-study h3 {
-    @apply mb-3 mt-10 text-[1.35rem] font-semibold leading-tight;
+    @apply mb-3 mt-10 text-[1.35rem];
   }
 
   .case-study p {
-    @apply relative max-w-none text-[1.02rem] leading-[1.58] text-sand-12;
+    @apply relative max-w-[520px] mx-auto text-[1.02rem] leading-[1.58] text-sand-12;
   }
 
   .case-study > section > * {
@@ -168,11 +177,16 @@
   }
 
   .case-study blockquote {
-    @apply my-8 border-l-2 border-l-sand-6 pl-5 text-sand-10;
+    @apply my-8 border-l-2 border-l-sand-6 pl-5 text-sand-10 max-w-[520px] mx-auto;
+  }
+
+  .case-study ul,
+  .case-study ol {
+    @apply max-w-[520px] mx-auto flex flex-col gap-2;
   }
 
   .case-study div[class*='grid'] {
-    @apply my-10;
+    @apply my-10 w-full max-w-full mx-auto;
   }
 
   .case-study div[class*='grid'] .case-study-image {
@@ -284,3 +298,16 @@
 .animate-fade-in {
   animation: fadeIn 0.2s ease-in-out forwards;
 }
+
+/* Hide scrollbar for Chrome, Safari and Opera, Firefox, IE and Edge */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+  width: 0;
+  height: 0;
+}
+
+

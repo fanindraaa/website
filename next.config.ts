@@ -1,12 +1,9 @@
-import { NextConfig } from 'next';
-
-/** @type {import('next').NextConfig} */
-const { withContentlayer } = require('next-contentlayer2');
-const path = require('path');
+import type { NextConfig } from 'next';
+import path from 'path';
 
 const nextConfig: NextConfig = {
   sassOptions: {
-    includedPaths: [path.join(__dirname, 'styles')],
+    includePaths: [path.join(__dirname, 'styles')],
   },
   images: {
     formats: ['image/avif', 'image/webp'],
@@ -24,8 +21,18 @@ const nextConfig: NextConfig = {
         destination: '/',
         permanent: true,
       },
+      {
+        source: '/about',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/playground',
+        destination: '/',
+        permanent: true,
+      },
     ];
   },
 };
 
-module.exports = withContentlayer(nextConfig);
+export default nextConfig;

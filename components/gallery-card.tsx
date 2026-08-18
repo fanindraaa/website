@@ -2,76 +2,83 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export interface GalleryCardProps {
-  image: string;
   name: string;
   year: string;
   description: string;
-  href?: string;
-  aspectRatio?: string;
+  images?: string[];
+  linkText?: string;
+  linkUrl?: string;
   priority?: boolean;
 }
 
 export default function GalleryCard({
-  image,
   name,
   year,
   description,
-  href,
-  aspectRatio = 'aspect-[16/10]',
+  images = [],
+  linkText,
+  linkUrl,
   priority = false,
 }: GalleryCardProps) {
-  const isVideoOrDark = name.toLowerCase().includes('metalab');
+  return (
+    <article className="group flex flex-col w-full text-[14px]">
+      {/* Name, Year, Description & Link */}
+      <div className="flex flex-col gap-1.5 mb-3.5">
+        <div className="flex items-baseline justify-between gap-4">
+          <h3 className="font-semibold text-sand-12 text-[15px] sm:text-[16px] leading-tight m-0">
+            {name}
+          </h3>
+          <span className="text-[13px] text-sand-9 shrink-0 font-normal">
+            {year}
+          </span>
+        </div>
 
-  const cardContent = (
-    <div className="group flex flex-col w-full text-[14px]">
-      <div className={`relative w-full ${aspectRatio} overflow-hidden rounded-none bg-[#eef0f2]`}>
-        {isVideoOrDark ? (
-          <div className="absolute inset-0 bg-black flex items-center justify-center">
-            {/* Four-point star outline icon */}
-            <svg
-              className="w-12 h-12 text-white opacity-90 transition-transform duration-300 group-hover:scale-110"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+        <div className="flex w-full justify-between gap-y-1 text-[13.5px] leading-relaxed">
+          <span className="text-sand-11">{description}</span>
+          {linkText && (
+            linkUrl ? (
+              <a
+                href={linkUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-0.5 text-sand-12 font-medium hover:underline shrink-0"
+              >
+                <span>{linkText}</span>
+                <span className="text-sand-9 text-[12px]">↗</span>
+              </a>
+            ) : (
+              <span className="text-black text-[12.5px]">
+                ({linkText})
+              </span>
+            )
+          )}
+        </div>
+      </div>
+
+      {/* Horizontal Gallery View */}
+      <div className="relative w-full">
+        <div className="flex w-full gap-3 sm:gap-4 overflow-x-auto pb-1 pt-0.5 no-scrollbar snap-x snap-mandatory focus:outline-none rounded-xl">
+          {images.map((img, idx) => (
+            <div
+              key={idx}
+              className="relative flex-none h-[320px] sm:h-[450px] w-auto overflow-hidden rounded-xl bg-sand-2 border border-sand-4/80 snap-start shadow-sm transition-all duration-300 hover:border-sand-6 group/img"
             >
-              <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
-            </svg>
-          </div>
-        ) : (
-          <Image
-            src={image}
-            alt={name}
-            fill
-            priority={priority}
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover transition-transform duration-300 group-hover:scale-[1.015]"
-          />
-        )}
+              <Image
+                src={img}
+                alt={`${name} preview ${idx + 1}`}
+                width={0}
+                height={0}
+                sizes="100vw"
+                priority={priority && idx === 0}
+                style={{ width: 'auto', height: '100%' }}
+                className="h-full w-auto object-cover transition-transform duration-500 ease-out group-hover/img:scale-[1.02]"
+              />
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="mt-2.5 flex items-baseline justify-between gap-4">
-        <h3 className="font-semibold text-sand-12 text-[14px] leading-tight">
-          {name}
-        </h3>
-        <span className="text-[13px] text-sand-9 shrink-0 font-normal">
-          {year}
-        </span>
-      </div>
-      <p className="mt-0.5 text-[13px] leading-relaxed text-sand-10 max-w-none">
-        {description}
-      </p>
-    </div>
+    </article>
   );
-
-  if (href) {
-    return (
-      <Link href={href} className="no-underline block w-full">
-        {cardContent}
-      </Link>
-    );
-  }
-
-  return cardContent;
 }
+
+

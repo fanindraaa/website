@@ -24,8 +24,8 @@ export default function HeaderTime() {
   }, []);
 
   return (
-    <div className="text-[13px] text-sand-10 select-none">
-      San Francisco, {timeStr || '7:25:37 PM'}
+    <div className="text-[13px] text-sand-10 tabular-nums select-none">
+      Bengaluru, India {timeStr || '7:25:37 PM'}
     </div>
   );
 }
