@@ -8,8 +8,9 @@ export default function HeaderTime() {
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
-      // Format time like "7:25:37 PM"
+      // Format time specifically for Bengaluru (Asia/Kolkata time zone)
       const formatted = now.toLocaleTimeString('en-US', {
+        timeZone: 'Asia/Kolkata',
         hour: 'numeric',
         minute: '2-digit',
         second: '2-digit',
@@ -25,7 +26,7 @@ export default function HeaderTime() {
 
   return (
     <div className="text-[13px] text-sand-10 tabular-nums select-none">
-      Bengaluru, India {timeStr || '7:25:37 PM'}
+      My current time: {timeStr} (Bengaluru, India)
     </div>
   );
 }

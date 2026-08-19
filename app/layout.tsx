@@ -6,11 +6,28 @@ import HeaderTime from '../components/header-time';
 import ClickSpark from '../components/clickspark';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://fanindra.me'),
   title: {
-    default: 'Fanindra Maharana',
-    template: '%s · Fanindra',
+    default: 'Fanindra Maharana · Product Designer',
+    template: '%s · Fanindra Maharana',
   },
-  description: 'Product Designer',
+  description:
+    "Fanindra Maharana is a Product Designer based in India, currently working at Rapido on Hopr. He’s obsessed with building consumer products, crafting thoughtful experiences, and solving complex problems in fast-paced environments.",
+  keywords: [
+    'Fanindra Maharana',
+    'Product Designer',
+    'UX Designer',
+    'UI Designer',
+    'Portfolio',
+    'Hopr',
+    'Cardtree',
+    'Interaction Design',
+  ],
+  authors: [{ name: 'Fanindra Maharana', url: 'https://fanindra.me' }],
+  creator: 'Fanindra Maharana',
+  alternates: {
+    canonical: '/',
+  },
   icons: {
     icon: [
       {
@@ -22,15 +39,32 @@ export const metadata: Metadata = {
         media: '(prefers-color-scheme: dark)',
       },
     ],
+    apple: '/light.svg',
   },
   openGraph: {
-    title: 'Fanindra Maharana',
-    description: 'Product Designer',
-    url: `https://fanindra.me`,
+    title: 'Fanindra Maharana · Product Designer',
+    description:
+      "Fanindra Maharana is a Product Designer based in India, currently working at Rapido on Hopr. He’s obsessed with building consumer products, crafting thoughtful experiences, and solving complex problems in fast-paced environments.",
+    url: 'https://fanindra.me',
     siteName: 'Fanindra Maharana',
-    locale: 'en-US',
+    locale: 'en_US',
     type: 'website',
-    images: '/og.jpg',
+    images: [
+      {
+        url: '/og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Fanindra Maharana · Product Designer Portfolio',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Fanindra Maharana · Product Designer',
+    description:
+      "Fanindra Maharana is a Product Designer based in India, currently working at Rapido on Hopr. He’s obsessed with building consumer products, crafting thoughtful experiences, and solving complex problems in fast-paced environments.",
+    creator: '@fanindraaa',
+    images: ['/og.jpg'],
   },
   robots: {
     index: true,

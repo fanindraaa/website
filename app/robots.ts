@@ -1,10 +1,12 @@
-export default function robots() {
+import { MetadataRoute } from 'next';
+
+export default function robots(): MetadataRoute.Robots {
   return {
-    rules: [
-      {
-        userAgent: '*',
-      },
-    ],
-    host: 'https://fanindra.me',
+    rules: {
+      userAgent: '*',
+      allow: '/',
+    },
+    sitemap: 'https://fanindra.me/sitemap.xml',
   };
 }
+
