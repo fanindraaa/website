@@ -1,5 +1,9 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import LightboxModal from './lightbox-modal';
 
 export interface GalleryCardProps {
   name: string;
@@ -35,6 +39,7 @@ export default function GalleryCard({
   linkUrl,
   priority = false,
 }: GalleryCardProps) {
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const items = media && media.length > 0 ? media : images;
 
   const tagList = Array.isArray(tags)
@@ -101,7 +106,17 @@ export default function GalleryCard({
             return (
               <div
                 key={idx}
-                className="relative flex-none h-[200px] sm:h-[450px] w-auto overflow-hidden rounded-xl bg-sand-2 border border-sand-4/80 snap-start shadow-sm transition-all duration-300 hover:border-sand-6 group/img"
+                className="relative flex-none h-[200px] sm:h-[450px] w-auto overflow-hidden rounded-xl bg-sand-2 border border-sand-4/80 snap-start shadow-sm transition-all duration-300 hover:border-sand-6 group/img cursor-pointer"
+                onClick={() => setLightboxIndex(idx)}
+                role="button"
+                tabIndex={0}
+                aria-label={`Open expanded view of ${name} preview ${idx + 1}`}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setLightboxIndex(idx);
+                  }
+                }}
               >
                 {isVid ? (
                   <video
@@ -125,13 +140,27 @@ export default function GalleryCard({
                     className="h-full w-auto object-cover transition-transform duration-500 ease-out group-hover/img:scale-[1.02]"
                   />
                 )}
+
               </div>
             );
           })}
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      {lightboxIndex !== null && (
+        <LightboxModal
+          isOpen={lightboxIndex !== null}
+          items={items}
+          currentIndex={lightboxIndex}
+          title={name}
+          onClose={() => setLightboxIndex(null)}
+          onNavigate={(index) => setLightboxIndex(index)}
+        />
+      )}
     </article>
   );
 }
+
 
 
