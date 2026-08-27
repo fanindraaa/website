@@ -9,9 +9,10 @@ const galleryItems = [
     linkText: 'Check out Hopr',
     linkUrl: 'https://apps.apple.com/in/app/hopr-carpool-ride-share-app/id6745472733',
     images: [
-      '/images/Hopr-1.webp',
-      '/images/Hopr-2.webp',
-      '/images/Hopr-3.webp',
+      '/images/hopr/home-progression.webp',
+      '/images/hopr/Hopr-1.webp',
+      '/images/hopr/Hopr-2.webp',
+      '/images/hopr/Hopr-3.webp',
     ],
     priority: true,
   },
@@ -158,10 +159,10 @@ export default function Home() {
               </a>
             </li>
             <li>
-              
-                <span>Resume</span>
-                <span className="text-sand-9 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"> (Updating soon)
-                </span>
+
+              <span>Resume</span>
+              <span className="text-sand-9 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"> (Updating soon)
+              </span>
             </li>
           </ul>
         </div>

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Footer from '../components/footer';
 import HeaderTime from '../components/header-time';
 import ClickSpark from '../components/clickspark';
+import { bind, play, setVolume } from "cuelume";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://fanindra.me'),
