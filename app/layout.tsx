@@ -5,6 +5,7 @@ import Footer from '../components/footer';
 import HeaderTime from '../components/header-time';
 import ClickSpark from '../components/clickspark';
 import { bind, play, setVolume } from "cuelume";
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://fanindra.me'),
@@ -89,11 +90,6 @@ export default function RootLayout({
     <html lang="en">
       <head></head>
       <body className="antialiased text-sand-12 bg-sand-1 text-[14px] selection:bg-[#00FF5E] selection:text-black min-h-screen flex flex-col justify-between px-4 sm:px-6 lg:px-8 py-4">
-        <script
-          defer
-          src="https://cloud.umami.is/script.js"
-          data-website-id="f276e1ed-f3c3-4560-aa5c-53e7cf03f6fb"
-        ></script>
         <ClickSpark
           sparkColor="#000000"
           sparkSize={10}
@@ -119,7 +115,7 @@ export default function RootLayout({
 
           <Footer />
         </ClickSpark>
+        <Analytics />
       </body>
     </html>
   );
-}
