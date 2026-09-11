@@ -74,11 +74,11 @@ const galleryItems = [
 
 export default function Home() {
   return (
-    <div className="w-full grid grid-cols-1 lg:grid-cols-[280px_1fr] xl:grid-cols-[320px_1fr] gap-12 lg:gap-14 xl:gap-20 items-start text-[14px]">
+    <div className="w-full grid grid-cols-1 lg:grid-cols-[280px_1fr] xl:grid-cols-[320px_1fr] gap-12 lg:gap-14 xl:gap-20 items-start text-[15px]">
       {/* Left Side Panel */}
       <aside className="w-full flex flex-col space-y-10 lg:sticky lg:top-8">
         {/* Bio text */}
-        <div className="space-y-4 text-[13.5px] leading-relaxed text-sand-11">
+        <div className="space-y-4 text-[15px] leading-relaxed text-sand-11">
           <h1 className="text-[16px] font-semibold text-sand-12 tracking-tight m-0">
             Fanindra Maharana
           </h1>
@@ -91,7 +91,7 @@ export default function Home() {
               href="https://hopr.mobi/"
               target="_blank"
               rel="noreferrer"
-              className="text-sand-12 no-underline hover:underline"
+              className="text-black bg-[#85FFB2] px-1 no-underline hover:underline"
             >
               Hopr
             </a>{' '}
@@ -100,7 +100,7 @@ export default function Home() {
               href="https://www.rapido.bike/"
               target="_blank"
               rel="noreferrer"
-              className="text-sand-12 no-underline hover:underline"
+              className="text-black bg-[#85FFB2] px-1 no-underline hover:underline"
             >
               Rapido.
             </a>{' '}
@@ -109,7 +109,7 @@ export default function Home() {
               href="https://thedouble.ai/"
               target="_blank"
               rel="noreferrer"
-              className="text-sand-12 no-underline hover:underline"
+              className="text-black bg-[#85FFB2] px-1 no-underline hover:underline"
             >
               Cardtree (now thedouble.ai)
             </a>
@@ -117,10 +117,10 @@ export default function Home() {
         </div>
 
         <div>
-          <h2 className="text-[12.5px] font-normal text-sand-9 mb-2.5">
+          <h2 className="text-[12.5px] text-sand-9 mb-2.5">
             Get in touch
           </h2>
-          <ul className="space-y-1.5 text-[13.5px] list-none p-0 m-0">
+          <ul className="space-y-1.5 text-[15px] list-none p-0 m-0">
             <li>
               <a
                 href="mailto:imfanindra@gmail.com"

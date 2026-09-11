@@ -49,19 +49,19 @@ export default function GalleryCard({
     : [];
 
   return (
-    <article className="group flex flex-col w-full text-[14px]">
+    <article className="group flex flex-col w-full text-[15px]">
       {/* Name, Year, Description & Link */}
       <div className="flex flex-col gap-1.5 mb-3.5">
         <div className="flex items-baseline justify-between gap-4">
           <h3 className="font-semibold text-sand-12 text-[15px] sm:text-[16px] leading-tight m-0">
             {name}
           </h3>
-          <span className="text-[13px] text-sand-9 shrink-0 font-normal">
+          <span className="text-[14px] text-sand-9 shrink-0">
             {year}
           </span>
         </div>
 
-        <div className="flex flex-col md:flex-row w-full justify-between md:items-center gap-y-1 text-[13.5px] leading-relaxed">
+        <div className="flex flex-col md:flex-row w-full justify-between md:items-center gap-y-1 text-[15px] leading-relaxed">
           <span className="text-sand-11 max-w-[640px]">{description}</span>
           {linkText && (
             linkUrl ? (
@@ -69,13 +69,13 @@ export default function GalleryCard({
                 href={linkUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-0.5 text-sand-12 font-medium hover:underline shrink-0"
+                className="inline-flex items-center gap-0.5 text-black bg-[#85FFB2] px-1 font-normal hover:underline shrink-0"
               >
                 <span>{linkText}</span>
-                <span className="text-sand-9 text-[12px]">↗</span>
+                <span className="text-black bg-[#85FFB2] px-1 text-[12px]">↗</span>
               </a>
             ) : (
-              <span className="text-black text-[12.5px]">
+              <span className="text-black text-[15px]">
                 ({linkText})
               </span>
             )
@@ -87,7 +87,7 @@ export default function GalleryCard({
             {tagList.map((tag, idx) => (
               <span
                 key={idx}
-                className="inline-flex items-center px-2 py-0.5 rounded-md text-[11.5px] font-medium bg-sand-3 text-sand-11 border border-sand-4/60"
+                className="inline-flex items-center px-2 py-0.5 rounded-md text-[11.5px] font-normal bg-sand-3 text-sand-11 border border-sand-4/60"
               >
                 {tag}
               </span>

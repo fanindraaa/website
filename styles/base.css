@@ -3,24 +3,34 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Soehne';
-  src: url('/fonts/soehne-buch.woff2') format('woff2');
+  font-family: 'ABCFavorit';
+  src: url('/fonts/ABCFavorit-Regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
-  font-family: 'Soehne';
-  src: url('/fonts/soehne-buch-kursiv.woff2') format('woff2');
+  font-family: 'ABCFavorit';
+  src: url('/fonts/ABCFavorit-RegularItalic.otf') format('opentype');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
+
 @font-face {
-  font-family: 'Soehne';
-  src: url('/fonts/soehne-halbfett.woff2') format('woff2');
-  font-weight: 600;
+  font-family: 'ABCFavorit';
+  src: url('/fonts/ABCFavorit-Bold.otf') format('opentype');
+  font-weight: 700;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ABCFavorit';
+  src: url('/fonts/ABCFavorit-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
   font-display: swap;
 }
 
@@ -32,7 +42,7 @@
   html {
     scroll-behavior: smooth;
     height: 100%;
-    font-size: 14px;
+    font-size: 15px;
 
     &.is-changing .transition-fade {
       transition: opacity 0.2s;
@@ -45,8 +55,9 @@
   }
 
   body {
-    font-family: 'Soehne', sans-serif;
-    font-size: 14px;
+    font-family: 'ABCFavorit', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
   }
 
   strong {

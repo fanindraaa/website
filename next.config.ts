@@ -63,11 +63,6 @@ const nextConfig: NextConfig = {
         destination: '/',
         permanent: true,
       },
-      {
-        source: '/playground',
-        destination: '/',
-        permanent: true,
-      },
     ];
   },
 };

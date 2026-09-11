@@ -50,7 +50,7 @@ module.exports = {
         16: 'repeat(16, minmax(0, 1fr))',
       },
       fontFamily: {
-        sans: ['Soehne', 'sans-serif'],
+        sans: ['ABCFavorit', 'sans-serif'],
       },
     },
   },

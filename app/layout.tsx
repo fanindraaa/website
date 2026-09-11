@@ -89,7 +89,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head></head>
-      <body className="antialiased text-sand-12 bg-sand-1 text-[14px] selection:bg-[#00FF5E] selection:text-black min-h-screen flex flex-col justify-between px-4 sm:px-6 lg:px-8 py-4">
+      <body className="antialiased text-sand-12 bg-sand-1 text-[15px] font-normal selection:bg-[#85FFB2] selection:text-black min-h-screen flex flex-col justify-between px-4 sm:px-6 lg:px-8 py-4">
         <ClickSpark
           sparkColor="#000000"
           sparkSize={10}
@@ -99,13 +99,15 @@ export default function RootLayout({
         >
           {/* Top Header Bar across all pages */}
           <header className="w-full flex items-center justify-between py-2 mb-6">
-            <Link
-              href="/"
-              aria-label="Home"
-              className="flex items-center text-sand-12 font-semibold no-underline hover:opacity-70 transition-opacity"
-            >
-              FM
-            </Link>
+            <div className="flex items-center gap-3">
+              <Link
+                href="/"
+                aria-label="Home"
+                className="flex items-center text-sand-12 font-semibold no-underline hover:opacity-70 transition-opacity"
+              >
+                FM
+              </Link>
+            </div>
             <HeaderTime />
           </header>
 
