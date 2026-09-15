@@ -79,7 +79,7 @@ export default function Home() {
       <aside className="w-full flex flex-col space-y-10 lg:sticky lg:top-8">
         {/* Bio text */}
         <div className="space-y-4 text-[15px] leading-relaxed text-sand-11">
-          <h1 className="text-[16px] font-semibold text-sand-12 tracking-tight m-0">
+          <h1 className="text-[16px] font-bold text-sand-12 m-0">
             Fanindra Maharana
           </h1>
           <p>

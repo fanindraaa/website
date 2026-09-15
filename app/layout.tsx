@@ -89,7 +89,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head></head>
-      <body className="antialiased text-sand-12 bg-sand-1 text-[15px] font-normal selection:bg-[#85FFB2] selection:text-black min-h-screen flex flex-col justify-between px-4 sm:px-6 lg:px-8 py-4">
+      <body className="antialiased text-sand-12 bg-sand-1 text-[15px] font- selection:bg-[#85FFB2] selection:text-black min-h-screen flex flex-col justify-between px-4 sm:px-6 lg:px-8 py-4">
         <ClickSpark
           sparkColor="#000000"
           sparkSize={10}
@@ -103,7 +103,7 @@ export default function RootLayout({
               <Link
                 href="/"
                 aria-label="Home"
-                className="flex items-center text-sand-12 font-semibold no-underline hover:opacity-70 transition-opacity"
+                className="flex items-center text-sand-12 font-bold no-underline hover:opacity-70 transition-opacity"
               >
                 FM
               </Link>

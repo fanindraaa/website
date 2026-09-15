@@ -3,34 +3,10 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'ABCFavorit';
-  src: url('/fonts/ABCFavorit-Regular.otf') format('opentype');
-  font-weight: 400;
+  font-family: 'Sans';
+  src: url('/fonts/Sans.woff2') format('woff2');
+  font-weight: 100 900;
   font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'ABCFavorit';
-  src: url('/fonts/ABCFavorit-RegularItalic.otf') format('opentype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'ABCFavorit';
-  src: url('/fonts/ABCFavorit-Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'ABCFavorit';
-  src: url('/fonts/ABCFavorit-BoldItalic.otf') format('opentype');
-  font-weight: 700;
-  font-style: italic;
   font-display: swap;
 }
 
@@ -55,9 +31,9 @@
   }
 
   body {
-    font-family: 'ABCFavorit', sans-serif;
+    font-family: 'Sans', sans-serif;
     font-size: 15px;
-    font-weight: 400;
+    font-weight: 500;
   }
 
   strong {
@@ -131,11 +107,11 @@
 
 @layer components {
   .home-chip {
-    @apply inline-flex items-center gap-1 rounded-full border border-sand-4 bg-white px-4 py-2 text-[0.95rem] font-semibold leading-none no-underline shadow-[0_6px_18px_rgba(0,0,0,0.07)];
+    @apply inline-flex items-center gap-1 rounded-full border border-sand-4 bg-white px-4 py-2 text-[0.95rem] font-bold leading-none no-underline shadow-[0_6px_18px_rgba(0,0,0,0.07)];
   }
 
   .case-back-chip {
-    @apply inline-flex items-center rounded-full border border-sand-4 bg-white px-4 py-2 text-[0.95rem] font-semibold leading-none no-underline shadow-[0_6px_18px_rgba(0,0,0,0.07)];
+    @apply inline-flex items-center rounded-full border border-sand-4 bg-white px-4 py-2 text-[0.95rem] font-bold leading-none no-underline shadow-[0_6px_18px_rgba(0,0,0,0.07)];
   }
 
   .case-sort-chip {
@@ -156,7 +132,7 @@
   .case-study h4,
   .case-study h5,
   .case-study h6 {
-    @apply max-w-[520px] mx-auto font-semibold leading-tight;
+    @apply max-w-[520px] mx-auto font-bold leading-tight;
   }
 
   .case-study h2 {
