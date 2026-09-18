@@ -5,7 +5,7 @@ const galleryItems = [
     name: 'Hopr Carpool',
     year: 'Dec 2025 - Present',
     description: "At Rapido, I’ve started as an intern and now an Associate Product Designer. My work includes designing Hopr (Rapido’s carpooling product), while exploring how trust, behavioral design, and user needs can shape adoption in an emerging shared-mobility category. (Detailed Case Study coming soon)",
-    tags: 'Product Design, Interaction Design, 0 → 1, Double-sided marketplace, Mobility',
+    tags: 'Product Design, Interaction Design, 0 → 1, Double-sided marketplace',
     linkText: 'Check out Hopr',
     linkUrl: 'https://apps.apple.com/in/app/hopr-carpool-ride-share-app/id6745472733',
     images: [
@@ -30,7 +30,7 @@ const galleryItems = [
   {
     name: 'Internship at Cardtree (now thedouble.ai)',
     year: 'Jul 2025 - Nov 2025',
-    description: 'As on of the founding designer at Cardtree, I shaped the core product and AI Twin, shipping new experiences, and collaborating closely with developers to ensure high-quality implementation',
+    description: 'As one of the founding designers at Cardtree, I shaped the core product and AI Twin, shipping new experiences, and collaborating closely with developers to ensure high-quality implementation',
     tags: 'Internship, Product Design, AI Experience',
     linkText: 'Case study coming soon',
     images: [
