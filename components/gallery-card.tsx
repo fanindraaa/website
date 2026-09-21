@@ -45,8 +45,8 @@ export default function GalleryCard({
   const tagList = Array.isArray(tags)
     ? tags.map((t) => t.trim()).filter(Boolean)
     : typeof tags === 'string' && tags.trim().length > 0
-    ? tags.split(',').map((t) => t.trim()).filter(Boolean)
-    : [];
+      ? tags.split(',').map((t) => t.trim()).filter(Boolean)
+      : [];
 
   return (
     <article className="group flex flex-col w-full text-[15px]">
@@ -65,15 +65,23 @@ export default function GalleryCard({
           <span className="text-sand-11 max-w-[640px]">{description}</span>
           {linkText && (
             linkUrl ? (
-              <a
-                href={linkUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-0.5 text-black bg-[#85FFB2] px-1 font-medium hover:underline shrink-0"
-              >
-                <span>{linkText}</span>
-                <span className="text-black bg-[#85FFB2] px-1 text-[12px]">↗</span>
-              </a>
+              linkUrl.startsWith('/') ? (
+                <Link
+                  href={linkUrl}
+                  className="inline-flex items-center gap-0.5 text-black bg-[#85FFB2] px-2 py-1 font-semibold hover:text-[#85FFB2] hover:bg-black rounded-md"
+                >
+                 {linkText} →
+                </Link>
+              ) : (
+                <a
+                  href={linkUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-0.5 text-black bg-[#85FFB2] px-2 py-1 font-semibold hover:text-[#85FFB2] hover:bg-black rounded-md"
+                >
+                  {linkText} ↗
+                </a>
+              )
             ) : (
               <span className="text-black text-[15px]">
                 ({linkText})

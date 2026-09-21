@@ -1,8 +1,5 @@
 import '../styles/base.css';
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import Footer from '../components/footer';
-import HeaderTime from '../components/header-time';
 import ClickSpark from '../components/clickspark';
 import { bind, play, setVolume } from "cuelume";
 import { Analytics } from '@vercel/analytics/react';
@@ -89,7 +86,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head></head>
-      <body className="antialiased text-sand-12 bg-sand-1 text-[15px] font- selection:bg-[#85FFB2] selection:text-black min-h-screen flex flex-col justify-between px-4 sm:px-6 lg:px-8 py-4">
+      <body className="antialiased text-sand-12 bg-sand-1 text-[15px] selection:bg-[#85FFB3] selection:text-black min-h-screen">
         <ClickSpark
           sparkColor="#000000"
           sparkSize={10}
@@ -97,25 +94,7 @@ export default function RootLayout({
           sparkCount={8}
           duration={400}
         >
-          {/* Top Header Bar across all pages */}
-          <header className="w-full flex items-center justify-between py-2 mb-6">
-            <div className="flex items-center gap-3">
-              <Link
-                href="/"
-                aria-label="Home"
-                className="flex items-center text-sand-12 font-bold no-underline hover:opacity-70 transition-opacity"
-              >
-                FM
-              </Link>
-            </div>
-            <HeaderTime />
-          </header>
-
-          <main className="transition-fade w-full flex-1">
-            {children}
-          </main>
-
-          <Footer />
+          {children}
         </ClickSpark>
         <Analytics />
       </body>

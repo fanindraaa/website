@@ -91,7 +91,7 @@ export default function Home() {
               href="https://hopr.mobi/"
               target="_blank"
               rel="noreferrer"
-              className="text-black bg-[#85FFB2] px-1 no-underline hover:underline"
+              className="px-1 text-black bg-[#85FFB3] font-semibold hover:bg-black hover:text-[#85FFB3]"
             >
               Hopr
             </a>{' '}
@@ -100,16 +100,16 @@ export default function Home() {
               href="https://www.rapido.bike/"
               target="_blank"
               rel="noreferrer"
-              className="text-black bg-[#85FFB2] px-1 no-underline hover:underline"
+              className="px-1 text-black bg-[#85FFB3] font-semibold hover:bg-black hover:text-[#85FFB3]"
             >
-              Rapido.
-            </a>{' '}
+              Rapido
+            </a>.{' '}
             Previously, at{' '}
             <a
               href="https://thedouble.ai/"
               target="_blank"
               rel="noreferrer"
-              className="text-black bg-[#85FFB2] px-1 no-underline hover:underline"
+              className="px-1 text-black bg-[#85FFB3] font-semibold hover:bg-black hover:text-[#85FFB3]"
             >
               Cardtree (now thedouble.ai)
             </a>
